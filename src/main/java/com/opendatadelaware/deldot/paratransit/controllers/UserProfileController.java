@@ -3,6 +3,7 @@ package com.opendatadelaware.deldot.paratransit.controllers;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+@CrossOrigin
 @RestController
 public class UserProfileController {
 
@@ -19,6 +20,11 @@ public class UserProfileController {
     @GetMapping(value = "/api")
     public String helloWorld() {
         return "derp";
+    }
+
+    @PostMapping(value = "/api/name")
+    public String sayHello(@RequestBody String userName) {
+        return "Hello, " + userName;
     }
 
 }
